@@ -5,7 +5,7 @@
 #include <time.h>
 #include "mpi.h"
 
-#include "common.h"
+#include "util.h"
 
 int main(int argc, char *argv[]){
   // MPI init

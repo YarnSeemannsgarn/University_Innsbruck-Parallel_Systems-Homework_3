@@ -5,7 +5,7 @@
 #include <mpi.h>
 #include <time.h>
 
-#include "common.h"
+#include "util.h"
 
 int *matrix_multiplication(int *matrix1, size_t rows1, size_t columns1, int *matrix2, size_t rows2, size_t columns2){
   int *result = create_matrix(rows1, columns2);
