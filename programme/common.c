@@ -13,7 +13,7 @@ void swap(int *a, int *b){
 // Cannot use two-dimensional array, because MPI_Scatter expects flat array
 int *create_matrix (size_t M, size_t N) {
     int *matrix;
-    int h, i, j;
+    int h;
 
     if (( matrix = malloc(M*N*sizeof(int))) == NULL) {
         printf("Malloc error");
