@@ -44,6 +44,13 @@ int main(int argc, char *argv[]){
     partitioned_primes[i] = 1;
   }
 
+  // Measure time as root
+  clock_t begin_time, end_time;
+  double time_spent;
+  if (rank == 0) {
+    begin_time = clock();
+  }
+
   // Sieve
   for(i = 2; i <= square_root; i++) {
     if(shared_primes[i]) {
@@ -61,6 +68,14 @@ int main(int argc, char *argv[]){
 	partitioned_primes[j-start] = 0;
       }
     }
+  }
+
+  // Barrier for synchronization and time measurement
+  MPI_Barrier(MPI_COMM_WORLD);
+  if(rank == 0) {
+    end_time = clock();
+    time_spent = (double)(end_time - begin_time) / CLOCKS_PER_SEC;
+    printf("Time spent: %fs\n", time_spent);
   }
 
   // Check

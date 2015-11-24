@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ $# -ne 3 ]; then
+	echo "usage: $0 nprocs programme problem-size"
+	exit 1
+fi
+
+module load openmpi
+echo "nprocs: $1, problem-size: $3"
+mpirun -np $1 $2 $3

@@ -42,8 +42,10 @@ int main(int argc, char *argv[]){
   int *matrix1;
   int *matrix2;
   int *result_matrix;
-  matrix2 = create_matrix(N, N);   // Everybody needs the second matrix
+  clock_t begin, end;
+  double time_spent;
 
+  matrix2 = create_matrix(N, N);   // Everybody needs the second matrix
   if(rank == 0){
     // Root process creates first and result matrix
     matrix1 = create_matrix(N, N);
@@ -65,6 +67,9 @@ int main(int argc, char *argv[]){
       printf("Comm_size: %i\n", comm_size);
       printf("Send_count: %i\n\n", send_count);
     }
+
+    // Measure time at root
+    begin = clock();
   }
 
   // Scatter matrix1 and broadcast matrix2
@@ -79,18 +84,25 @@ int main(int argc, char *argv[]){
   // Gather results
   MPI_Gather(result_part, send_count, MPI_INT, result_matrix, send_count, MPI_INT, 0, MPI_COMM_WORLD);
 
-  // Print result
-  if(rank == 0 && argc == 3) {
-     printf("\nResult matrix:\n");
-     print_matrix(result_matrix, N, N);
-     free(matrix1);
+  // Print result And give time
+  if(rank == 0) {
+    end = clock();
+    time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+    printf("Time spent: %fs\n", time_spent);
+    if(argc == 3) {
+      printf("\nResult matrix:\n");
+      print_matrix(result_matrix, N, N);
+    
+    }
+    free(matrix1);
+    free(result_matrix);
   }
 
   // Free memory
   free(matrix2);
   free(scatter_receive);
-  free(result_matrix);
-
+  free(result_part);
+  
   MPI_Finalize();
   return EXIT_SUCCESS;
 }
