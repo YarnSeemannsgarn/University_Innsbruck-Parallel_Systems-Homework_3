@@ -27,7 +27,7 @@ For each programme I tested different big problem sizes. For the following I fou
 
 Programme: matrix_multiplication with problem size 2000*2000*2
 Nprocs | Runtime (in s) | Speedup | Efficency
-:------|----------------|---------------------
+:------|---------------:|--------:|---------:
 1      |          91.09	|       - |         -
 2      |          46.59 |    1.96 |      0.98
 4      |          23.96 |    3.80 |      0.95      
@@ -37,7 +37,7 @@ Nprocs | Runtime (in s) | Speedup | Efficency
 
 Programme: sieve_of_erastothenes with problem size 1000000000
 Nprocs | Runtime (in s) | Speedup | Efficency
-:------|----------------|---------------------
+:------|---------------:|--------:|---------:
 1      |         143.72 |       - |         -
 2      |          78.89 |    1.82 |      0.91
 4      |          38.97 |    3.69 |	 0.92
@@ -47,7 +47,7 @@ Nprocs | Runtime (in s) | Speedup | Efficency
 
 Programme: dijkstra with problem size 8000
 Nprocs | Runtime (in s) | Speedup | Efficency
-:------|----------------|---------------------
+:------|---------------:|--------:|---------:
 1      |           0.75 |       - |         -
 2      |          19.40 |    0.04 |      0.02  
 4      |          18.82 |    0.04 |	 0.01
