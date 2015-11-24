@@ -25,7 +25,7 @@ Measurement technique: clock c-libraries
 
 For each programme I tested different big problem sizes. For the following I found relatively "good" efficencies.
 
-Programme: matrix_multiplication with problem size 2000*2000*2
+Programme: matrix_multiplication with problem size 2000\*2000\*2
 
 Nprocs | Runtime (in s) | Speedup | Efficency
 :------|---------------:|--------:|---------:
