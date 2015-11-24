@@ -26,6 +26,7 @@ Measurement technique: clock c-libraries
 For each programme I tested different big problem sizes. For the following I found relatively "good" efficencies.
 
 Programme: matrix_multiplication with problem size 2000*2000*2
+
 Nprocs | Runtime (in s) | Speedup | Efficency
 :------|---------------:|--------:|---------:
 1      |          91.09	|       - |         -
@@ -36,6 +37,7 @@ Nprocs | Runtime (in s) | Speedup | Efficency
 32     |           4.32 |   21.08 |      0.65
 
 Programme: sieve_of_erastothenes with problem size 1000000000
+
 Nprocs | Runtime (in s) | Speedup | Efficency
 :------|---------------:|--------:|---------:
 1      |         143.72 |       - |         -
@@ -46,6 +48,7 @@ Nprocs | Runtime (in s) | Speedup | Efficency
 32     |          11.93 |   12.05 |      0.38 
 
 Programme: dijkstra with problem size 8000
+
 Nprocs | Runtime (in s) | Speedup | Efficency
 :------|---------------:|--------:|---------:
 1      |           0.75 |       - |         -
